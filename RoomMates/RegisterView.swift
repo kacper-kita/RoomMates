@@ -1,19 +1,19 @@
 //
-//  ContentView.swift
+//  RegisterView.swift
 //  RoomMates
 //
-//  Created by Kacper Kita on 26/01/2020.
+//  Created by Kacper Kita on 27/01/2020.
 //  Copyright © 2020 Kacper Kita. All rights reserved.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct RegisterView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @State private var login: String = ""
     @State private var password: String = ""
-    @State private var isActive = false
+    @State private var isActiveLogin = false
     
     var body: some View {
         NavigationView {
@@ -37,7 +37,8 @@ struct ContentView: View {
                         .padding()
      
                 }.frame(width: 300)
-                .offset(x: 0, y: -200)
+                .offset(x: 0, y: -150)
+                
                 ZStack {
                     Image("login")
                     SecureField("Password", text: $password)
@@ -45,16 +46,16 @@ struct ContentView: View {
                 
                     
                 }.frame(width: 300)
-                .offset(x: 0, y: -200)
+                .offset(x: 0, y: -150)
                 
-                Button(action: {
+                ZStack {
+                    Image("login")
+                    SecureField("Repeat password", text: $login)
+                        .padding()
+                
                     
-                }) {
-                    Text("Forgot password?")
-                    .font(.custom("Seoge UI", size: 11))
-                    .foregroundColor(Color(red: 166/255, green: 166/255, blue: 166/255))
-                    
-                }.offset(x: 80, y: -200)
+                }.frame(width: 300)
+                .offset(x: 0, y: -150)
                 
             }
             Button(action: {
@@ -63,44 +64,44 @@ struct ContentView: View {
                 ZStack {
                     Image("button_back")
                         .renderingMode(.original)
-                    Text("LOGIN")
+                    Text("Register")
                         .padding(.bottom, 5.0)
                         .font(.custom("Seoge UI", size: 15))
                         .foregroundColor(Color.white)
                         
                 }
                 
-            }.offset(x: 0, y: -150)
+            }.offset(x: 0, y: -100)
             
             HStack {
-                Text("Don't have any account?")
+                Text("Already have an account?")
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 166/255, green: 166/255, blue: 166/255))
                 //Navigation Link to create accout
-                NavigationLink(destination: RegisterView(), isActive: self.$isActive) {
+                NavigationLink(destination: ContentView (), isActive: self.$isActiveLogin) {
                     Text("")
                 }
                 
                 
                 Button(action: {
-                    self.isActive = true
-                    
-               self.mode.wrappedValue.dismiss()
+                    self.isActiveLogin = true
+                    self.mode.wrappedValue.dismiss()
                 }) {
-                    Text("Create your account")
+                    Text("Login")
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
                 }
-            }
+            }.offset(x: 0, y: -10)
         
             }
             }.navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
+        
+    }
+}
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
