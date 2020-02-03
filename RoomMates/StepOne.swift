@@ -10,76 +10,84 @@ import SwiftUI
 
 struct StepOne: View {
     
+    @State private var isActive = false
     @State private var name = ""
-    
+    @State var isNavigationBarHidden: Bool = true
+
     var body: some View {
-        VStack {
-            Image("Background")
-                .edgesIgnoringSafeArea(.all)
-                .offset(x: 0, y: -6)
-            Spacer()
-            Text("Step 1:")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
-                .offset(x: 0, y: -150)
-            
-            Spacer()
-            
+        NavigationView {
             VStack {
-                VStack(alignment: .leading) {
-                    Text("Name:")
-                        .font(.custom("Seoge UI", size: 19))
-                        .foregroundColor(Color(red: 102/255, green: 102/255, blue: 102/255))
-                        .padding(.leading, 12.0)
-                    ZStack {
-                        Image("login")
-                        TextField("", text: $name)
-                            .padding()
+                    Image("Background")
+                        .edgesIgnoringSafeArea(.all)
+                        .offset(x: 0, y: -6)
+                    Spacer()
+                    Text("Step 1:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
+                        .offset(x: 0, y: -190)
                     
-                        
-                    }.frame(width: 300)
-                }.offset(x: 0, y: -200)
-                
-                VStack(alignment: .leading) {
-                    Text("Join to room:")
-                        .font(.custom("Seoge UI", size: 19))
-                        .foregroundColor(Color(red: 102/255, green: 102/255, blue: 102/255))
-                        .multilineTextAlignment(.leading)
-                        .padding(.bottom, 21.0)
-                        .padding(.leading, 10.0)
-                    HStack(spacing: -3.0) {
-                        ZStack {
-                            Image("Button_room")
-                            Button(action: {
-                                
-                            }) {
-                                Text("CREATE")
+                    Spacer()
+                    
+                    VStack {
+                        VStack(alignment: .leading) {
+                            Text("Name:")
                                 .font(.custom("Seoge UI", size: 19))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
-                                    .padding(.bottom, 12.0)
-                            }
-                        }
+                                .foregroundColor(Color(red: 102/255, green: 102/255, blue: 102/255))
+                                .padding(.leading, 12.0)
+                            ZStack {
+                                Image("login")
+                                TextField("", text: $name)
+                                    .padding()
+                            
+                                
+                            }.frame(width: 300)
+                        }.offset(x: 0, y: -200)
                         
-                        ZStack {
-                            Image("Button_room")
-                            Button(action: {
-                                
-                            }) {
-                                Text("JOIN")
+                        VStack(alignment: .leading) {
+                            Text("Join to room:")
                                 .font(.custom("Seoge UI", size: 19))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
-                                    .padding(.bottom, 12.0)
-                                
+                                .foregroundColor(Color(red: 102/255, green: 102/255, blue: 102/255))
+                                .multilineTextAlignment(.leading)
+                                .padding(.bottom, 21.0)
+                                .padding(.leading, 10.0)
+                            HStack(spacing: -3.0) {
+                                    //Navigation Create
+                                    
+                                NavigationLink(destination: CreateRoom()) {
+                                    ZStack {
+                                        Image("Button_room")
+                                            .renderingMode(.original)
+                                        Text("CREATE")
+                                        .font(.custom("Seoge UI", size: 19))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
+                                            .padding(.bottom, 12.0)
+                                    }
+                                }
+                                //Navigation Join
+                                NavigationLink(destination: JoinToRoom()) {
+                                    ZStack {
+                                        Image("Button_room")
+                                            .renderingMode(.original)
+                                        
+                                        Text("JOIN")
+                                        .font(.custom("Seoge UI", size: 19))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
+                                            .padding(.bottom, 12.0)
+                                    }
+                                }
                             }
-                        }
+                        }.offset(x: 0, y: -180)
                     }
-                }.offset(x: 0, y: -180)
+                }
+            }.navigationBarTitle("Hidden Title")
+            .navigationBarHidden(self.isNavigationBarHidden)
+            .onAppear {
+                self.isNavigationBarHidden = true
             }
         }
-    }
 }
 
 struct StepOne_Previews: PreviewProvider {

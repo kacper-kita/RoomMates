@@ -10,10 +10,10 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     @State private var login: String = ""
     @State private var password: String = ""
-    @State private var isActiveLogin = false
+    @State var isNavigationBarHidden: Bool = true
     
     var body: some View {
         NavigationView {
@@ -58,18 +58,20 @@ struct RegisterView: View {
                 .offset(x: 0, y: -150)
                 
             }
-            Button(action: {
-                
-            }) {
+            //Navigation Link to register
+            NavigationLink(destination: StepOne()) {
                 ZStack {
                     Image("button_back")
                         .renderingMode(.original)
+                    
                     Text("Register")
                         .padding(.bottom, 5.0)
                         .font(.custom("Seoge UI", size: 15))
                         .foregroundColor(Color.white)
                         
+                    
                 }
+                
                 
             }.offset(x: 0, y: -100)
             
@@ -78,24 +80,19 @@ struct RegisterView: View {
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 166/255, green: 166/255, blue: 166/255))
                 //Navigation Link to create accout
-                NavigationLink(destination: ContentView (), isActive: self.$isActiveLogin) {
-                    Text("")
-                }
-                
-                
-                Button(action: {
-                    self.isActiveLogin = true
-                    self.mode.wrappedValue.dismiss()
-                }) {
+                NavigationLink(destination: ContentView()) {
                     Text("Login")
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
+                    
                 }
-            }.offset(x: 0, y: -10)
-        
             }
-            }.navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+            }
+        }.navigationBarTitle("Hidden Title")
+        .navigationBarHidden(self.isNavigationBarHidden)
+        .onAppear {
+            self.isNavigationBarHidden = true
+        }
         
     }
 }

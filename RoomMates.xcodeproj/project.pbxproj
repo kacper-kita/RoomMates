@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36477A0023E8A0B200104193 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364779FF23E8A0B200104193 /* DashBoardView.swift */; };
 		367D7BA323DED57A00FE1B9A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA223DED57A00FE1B9A /* RegisterView.swift */; };
 		367D7BA523DEDBAF00FE1B9A /* StepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA423DEDBAF00FE1B9A /* StepOne.swift */; };
 		367D7BA723DF3F7700FE1B9A /* JoinToRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA623DF3F7700FE1B9A /* JoinToRoom.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		364779FF23E8A0B200104193 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		367D7BA223DED57A00FE1B9A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		367D7BA423DEDBAF00FE1B9A /* StepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOne.swift; sourceTree = "<group>"; };
 		367D7BA623DF3F7700FE1B9A /* JoinToRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToRoom.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				367D7BA423DEDBAF00FE1B9A /* StepOne.swift */,
 				367D7BA623DF3F7700FE1B9A /* JoinToRoom.swift */,
 				367D7BA823DF41A500FE1B9A /* CreateRoom.swift */,
+				364779FF23E8A0B200104193 /* DashBoardView.swift */,
 				36ECBB9423DE2B330084785E /* Assets.xcassets */,
 				36ECBB9923DE2B330084785E /* LaunchScreen.storyboard */,
 				36ECBB9C23DE2B330084785E /* Info.plist */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36ECBB8F23DE2B300084785E /* AppDelegate.swift in Sources */,
+				36477A0023E8A0B200104193 /* DashBoardView.swift in Sources */,
 				367D7BA723DF3F7700FE1B9A /* JoinToRoom.swift in Sources */,
 				367D7BA323DED57A00FE1B9A /* RegisterView.swift in Sources */,
 				36ECBB9123DE2B300084785E /* SceneDelegate.swift in Sources */,

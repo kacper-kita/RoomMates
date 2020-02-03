@@ -23,13 +23,13 @@ struct CreateRoom: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
-                .offset(x: 0, y: -120)
+                .offset(x: 0, y: -160)
                 
                 Text("Create Room")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
-                .offset(x: 0, y: -120)
+                .offset(x: 0, y: -160)
             }
         
         
