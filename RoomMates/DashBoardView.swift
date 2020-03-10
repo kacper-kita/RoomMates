@@ -9,23 +9,10 @@
 import SwiftUI
 
 struct DashBoardView: View {
-    @State var isDragging = "Shop"
+    @State var isHidden = true
     @State var isNavigationBarHidden: Bool = true
     
-    func showDayOfWeek() -> String {
-        let date = Date()
-        let dateFormatterDayInWeek = DateFormatter()
-        dateFormatterDayInWeek.dateFormat = "EEEE"
-        let dateFormatterDay = DateFormatter()
-        dateFormatterDay.dateFormat = "dd"
-        let dateFormatterMonth = DateFormatter()
-        dateFormatterMonth.dateFormat = "MM"
-        let dayInWeek = dateFormatterDayInWeek.string(from: date)
-        let day = dateFormatterDay.string(from: date)
-        let month = dateFormatterMonth.string(from: date)
-        let Data = dayInWeek + " " + day + "." + month
-        return Data
-    }
+    
     
     var body: some View {
         NavigationView {
@@ -49,30 +36,83 @@ struct DashBoardView: View {
             Group {
                 VStack {
                     HStack {
-                        Button(action: {
+                        ZStack {
+                            Button(action: {
+                                
+                            }) {
+                                ZStack {
+                                    Image("rectangleBack")
+                                        .renderingMode(.original)
+                                        .gesture(
+                                            LongPressGesture()
+                                                .onEnded({ _ in
+                                                    self.isHidden.toggle()
+                                                })
+                                        )
+                                    
+                                    VStack(alignment: .center) {
+                                         HStack {
+                                                                                  Image("Ellips")
+                                                                                  .renderingMode(.original)
+                                                                                  .padding(.bottom, 10.0)
+                                                                                  Text("Read book")
+                                                                                  .font(.custom("Seoge UI", size: 11))
+                                                                                      .foregroundColor(Color.white)
+                                                                                      .multilineTextAlignment(.center)
+                                                                                      .padding(.bottom, 9.0)
+                                                                                      .padding(.leading, -18.0)
+                                                                                      .frame(width: 80.0)
+                                                                              }
+                                        HStack {
+                                            Image("Ellips")
+                                            .renderingMode(.original)
+                                            .padding(.bottom, 10.0)
+                                            Text("Listen music")
+                                            .font(.custom("Seoge UI", size: 11))
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.center)
+                                                .padding(.bottom, 9.0)
+                                                .padding(.leading, -18.0)
+                                                .frame(width: 80.0)
+                                        }
+                                          HStack {
+                                                                                  Image("Ellips")
+                                                                                  .renderingMode(.original)
+                                                                                  .padding(.bottom, 10.0)
+                                                                                  Text("Read book")
+                                                                                  .font(.custom("Seoge UI", size: 11))
+                                                                                      .foregroundColor(Color.white)
+                                                                                      .multilineTextAlignment(.center)
+                                                                                      .padding(.bottom, 9.0)
+                                                                                      .padding(.leading, -18.0)
+                                                                                      .frame(width: 80.0)
+                                                                              }
+                                        
+                                        
+                                        
+                                    }
+                                    if isHidden {
+                                        Image("Shop")
+                                        .renderingMode(.original)
+                                        .gesture(
+                                                LongPressGesture()
+                                                    .onEnded({ _ in
+                                                        self.isHidden.toggle()
+                                                    })
+                                            )
+                                        
+                                    }
+                                }.offset(x: -94)
+                            }
+                            .offset(x: 12, y: -44)
                             
-                        }) {
-                            Image(isDragging)
+                            NavigationLink(destination: ShopListView()) {
+                                Image("ShopList")
                                 .renderingMode(.original)
-                                .gesture(LongPressGesture()
-                            .onEnded { _ in
-                                if self.isDragging == "Shop" {
-                                    self.isDragging = "ToDo"
-                                }else{
-                                    self.isDragging = "Shop"
-                                }
-                            })
-                            
-                        }.offset(x: 0, y: -48)
-                        
-                        Button(action: {
-                            
-                        }) {
-                            Image("ShopList")
-                                .renderingMode(.original)
+                            }.offset(x: 93, y: 3)
                         }
                     }
-                    
+
                     HStack {
                         Button(action: {
                             

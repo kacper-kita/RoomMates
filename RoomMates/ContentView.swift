@@ -34,14 +34,18 @@ struct ContentView: View {
             VStack{
                 ZStack {
                     Image("login")
-                    TextField("Login", text: $login)
+                    TextField("Login", text: $login) {
+                        UIApplication.shared.endEditing()
+                    }
                         .padding()
      
                 }.frame(width: 300)
                 .offset(x: 0, y: -200)
                 ZStack {
                     Image("login")
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $password) {
+                        UIApplication.shared.endEditing()
+                    }
                         .padding()
                 
                     
@@ -58,7 +62,7 @@ struct ContentView: View {
                 }.offset(x: 80, y: -200)
                 
             }
-            NavigationLink(destination: DashBoardView()) {
+            NavigationLink(destination: DashBoard()) {
                 ZStack {
                     Image("button_back")
                         .renderingMode(.original)
@@ -98,5 +102,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+public extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

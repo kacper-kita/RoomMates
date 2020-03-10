@@ -11,6 +11,7 @@ import SwiftUI
 struct CreateRoom: View {
     
     @State private var name = ""
+    @Environment(\.presentationMode) var presentationMode
     
        var body: some View {
         VStack {
@@ -72,10 +73,8 @@ struct CreateRoom: View {
                 }.frame(width: 300)
             }.offset(x: 0, y: -120)
             
-            Button(action: {
-                
-            }) {
-                ZStack {
+            NavigationLink(destination: DashBoard()) {
+            ZStack {
                     Image("button_back")
                         .renderingMode(.original)
                     Text("FINISH")
@@ -86,7 +85,20 @@ struct CreateRoom: View {
                 }
             }.offset(x: 0, y: -70)
         }
-        }
+        }.edgesIgnoringSafeArea(.bottom)
+        // Hide the system back button
+        .navigationBarBackButtonHidden(true)
+        // Add your custom back button here
+        .navigationBarItems(leading:
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(Color.white)
+                    
+                }
+        })
     }
 }
 
