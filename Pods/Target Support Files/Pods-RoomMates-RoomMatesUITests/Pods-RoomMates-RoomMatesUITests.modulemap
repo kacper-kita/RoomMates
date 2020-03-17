@@ -1,0 +1,6 @@
+framework module Pods_RoomMates_RoomMatesUITests {
+  umbrella header "Pods-RoomMates-RoomMatesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

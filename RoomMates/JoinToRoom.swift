@@ -12,6 +12,8 @@ struct JoinToRoom: View {
     
     @State private var roomID = ""
     @Environment(\.presentationMode) var presentationMode
+    @State var isHidden = true
+    @State var isNavigationBarHidden: Bool = true
     
     var body: some View {
         VStack {
@@ -50,33 +52,27 @@ struct JoinToRoom: View {
                     
                 }.frame(width: 300)
             }.offset(x: 0, y: -230)
-            
-            NavigationLink(destination: DashBoard()) {
-                ZStack {
-                        Image("button_back")
-                            .renderingMode(.original)
-                        Text("FINISH")
-                            .font(.custom("Seoge UI", size: 15))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                            .padding(.bottom, 7.0)
-                    }
-                }.offset(x: 0, y: -170)
-            }
-        }.edgesIgnoringSafeArea(.bottom)
-        // Hide the system back button
-        .navigationBarBackButtonHidden(true)
-        // Add your custom back button here
-        .navigationBarItems(leading:
             Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(Color.white)
-                    
-                }
-        })
+                self.presentationMode.wrappedValue.self
+                }) {
+                    ZStack {
+                            Image("button_back")
+                                .renderingMode(.original)
+                            Text("FINISH")
+                                .font(.custom("Seoge UI", size: 15))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 7.0)
+                        }
+        
+            }.offset(x: 0, y: -170)
+            
+            }
+        }.navigationBarTitle("Hidden Title")
+        .navigationBarHidden(self.isNavigationBarHidden)
+        .onAppear {
+            self.isNavigationBarHidden = true
+        }
     }
 }
 

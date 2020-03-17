@@ -73,7 +73,7 @@ struct CreateRoom: View {
                 }.frame(width: 300)
             }.offset(x: 0, y: -120)
             
-            NavigationLink(destination: DashBoard()) {
+            NavigationLink(destination: ContentView()) {
             ZStack {
                     Image("button_back")
                         .renderingMode(.original)

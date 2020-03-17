@@ -10,10 +10,23 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    
-    @State private var login: String = ""
-    @State private var password: String = ""
+    @EnvironmentObject var session: SessionStore
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var error: String = ""
     @State var isNavigationBarHidden: Bool = true
+    
+    func signUp() {
+        session.signUp(email: email, password: password) { (result, error) in
+            if let error = error {
+                self.error = error.localizedDescription
+                
+            }else{
+                self.email = ""
+                self.password = ""
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -33,7 +46,7 @@ struct RegisterView: View {
             VStack{
                 ZStack {
                     Image("login")
-                    TextField("Login", text: $login)
+                    TextField("Login", text: $email)
                         .padding()
      
                 }.frame(width: 300)
@@ -48,18 +61,11 @@ struct RegisterView: View {
                 }.frame(width: 300)
                 .offset(x: 0, y: -150)
                 
-                ZStack {
-                    Image("login")
-                    SecureField("Repeat password", text: $login)
-                        .padding()
-                
-                    
-                }.frame(width: 300)
-                .offset(x: 0, y: -150)
+               
                 
             }
             //Navigation Link to register
-            NavigationLink(destination: StepOne()) {
+            Button(action: signUp){
                 ZStack {
                     Image("button_back")
                         .renderingMode(.original)
@@ -71,16 +77,22 @@ struct RegisterView: View {
                         
                     
                 }
-                
-                
             }.offset(x: 0, y: -100)
+            
+            if (error != "") {
+                Text(error)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.red)
+                    .padding()
+                    .offset(x: 0, y: -130)
+            }
             
             HStack {
                 Text("Already have an account?")
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 166/255, green: 166/255, blue: 166/255))
                 //Navigation Link to create accout
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: LoginView()) {
                     Text("Login")
                     .font(.custom("Seoge UI", size: 11))
                     .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
@@ -98,7 +110,7 @@ struct RegisterView: View {
 }
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView().environmentObject(SessionStore())
     }
 }
 

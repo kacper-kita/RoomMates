@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ToDoList: View {
     
+    @ObservedObject private var datas = firebaseData
+    
     init() {
         // To remove only extra separators below the list:
         UITableView.appearance().tableFooterView = UIView()
@@ -19,8 +21,10 @@ struct ToDoList: View {
     }
     
     @State private var showingAlert = false
-    @State private var step = 0
+    @State private var updateRowID = ""
     @State private var item = ""
+    @State private var updateRowValue = ""
+    @State private var isUpdate = false
     @State private var listItems: [String] = []
     @State private var image = "list"
     @Environment(\.presentationMode) var presentationMode
@@ -60,16 +64,7 @@ struct ToDoList: View {
                     .font(Font.system(size: 30, design: .default))
                     
                     Button(action: {
-                        if self.item == "" {
-                            self.showingAlert = true
-                        }else{
-                            self.addRow()
-                        }
-                        
-                        if !self.item.isEmpty {
-                            self.item = ""
-                        }
-                        
+                        self.doItButton()
                     }) {
                         Image("addBtn")
                             .renderingMode(.original)
@@ -91,30 +86,29 @@ struct ToDoList: View {
             }.offset(x: 0, y: -180)
             
             List{
-                ForEach(listItems, id: \.self) { items in
+                ForEach(datas.data) { data in
                     Button(action: {
-                        if self.image == "complete" {
-                            self.image = "list"
-                            
-                        }else {
-                            self.image = "complete"
-                        }
+                        self.isUpdate = true
+                        self.updateRowID = data.id
+                        self.updateRowValue = data.msg
                     }) {
                         ZStack {
                             Image("list")
                             .renderingMode(.original)
                                 
                             
-                            Text(items)
+                            Text(data.msg)
                         }.frame(height: 65)
                     }.offset(x: -21)
-                }.onDelete { (indexSet) in
-                    self.listItems.remove(atOffsets: indexSet)
+                }.onDelete { (index) in
+                    firebaseData.deleteData(datas: self.datas, index: index)
                 }
             }
             .frame(width: 325.0, height: 400.0)
                 .offset(x: 0, y: -180)
             Spacer()
+            
+            
         }
         }.edgesIgnoringSafeArea(.bottom)
         // Hide the system back button
@@ -133,6 +127,16 @@ struct ToDoList: View {
     }
     func addRow() {
         self.listItems.append(item)
+    }
+    
+    func doItButton() {
+        if self.item == "" {
+            self.showingAlert = true
+        }else{
+            self.isUpdate ? firebaseData.updateData(id: self.updateRowID, txt: self.item) : firebaseData.createData(msg1: self.item)
+            self.isUpdate = false
+            self.item = ""
+        }
     }
     //MARK: Do dokończenia
     /*

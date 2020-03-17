@@ -12,6 +12,8 @@ struct DashBoard: View {
     
     @State var isHidden = true
     @State var isNavigationBarHidden: Bool = true
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var session: SessionStore
     
     var body: some View {
         NavigationView {
@@ -22,6 +24,9 @@ struct DashBoard: View {
                 
             Spacer()
             
+            Button(action: session.signOut) {
+                Text("sign out")
+            }
             HStack {
                 ZStack {
                     Image("money")
@@ -65,7 +70,7 @@ struct DashBoard: View {
                             .renderingMode(.original)
                     }
                     
-                    NavigationLink(destination: ListView()) {
+                    NavigationLink(destination: Text("comming soon")) {
                         Image("Budget-1")
                             .renderingMode(.original)
                     }
@@ -87,12 +92,15 @@ struct DashBoard: View {
         .onAppear {
             self.isNavigationBarHidden = true
         }
+        
+        
+        
     }
 }
 
 struct DashBoard_Previews: PreviewProvider {
     static var previews: some View {
-        DashBoard()
+        DashBoard().environmentObject(SessionStore())
     }
 }
 
