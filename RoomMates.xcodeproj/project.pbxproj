@@ -10,6 +10,10 @@
 		360289162415549B008D855C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360289152415549B008D855C /* LaunchScreen.storyboard */; };
 		363E2E1A241FB2AA00F3BD08 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E2E19241FB2AA00F3BD08 /* SessionStore.swift */; };
 		363E2E1C241FBA9900F3BD08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E2E1B241FBA9900F3BD08 /* LoginView.swift */; };
+		364D8A7124224C20004D959C /* FirebaseDataShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364D8A7024224C20004D959C /* FirebaseDataShop.swift */; };
+		366B3C1E2423BABA001ADB05 /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B3C1D2423BABA001ADB05 /* SlideMenuView.swift */; };
+		366B3C1F2423C004001ADB05 /* Pods_RoomMates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73568C93ACF31DB326E9AF2B /* Pods_RoomMates.framework */; };
+		366B3C202423C004001ADB05 /* Pods_RoomMates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73568C93ACF31DB326E9AF2B /* Pods_RoomMates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		367D7BA323DED57A00FE1B9A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA223DED57A00FE1B9A /* RegisterView.swift */; };
 		367D7BA523DEDBAF00FE1B9A /* StepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA423DEDBAF00FE1B9A /* StepOne.swift */; };
 		367D7BA723DF3F7700FE1B9A /* JoinToRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D7BA623DF3F7700FE1B9A /* JoinToRoom.swift */; };
@@ -27,9 +31,8 @@
 		36ECBBA623DE2B330084785E /* RoomMatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECBBA523DE2B330084785E /* RoomMatesTests.swift */; };
 		36ECBBB123DE2B330084785E /* RoomMatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECBBB023DE2B330084785E /* RoomMatesUITests.swift */; };
 		36EDB402241535D100B25A75 /* ROOMMATES2.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EDB401241535D100B25A75 /* ROOMMATES2.png */; };
-		E35D5B2FB7D8C0B42124B1B6 /* Pods_RoomMates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD558D221E3553D41381762E /* Pods_RoomMates.framework */; };
-		E68C2CDCB297F7B73C8F6173 /* Pods_RoomMatesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42089D9C5CE6CA1435FC915F /* Pods_RoomMatesTests.framework */; };
-		F44C016AFEE21F7DE2C5D557 /* Pods_RoomMates_RoomMatesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F099234D899E3B996ADD4F9 /* Pods_RoomMates_RoomMatesUITests.framework */; };
+		649223B32F3B369252EA4B19 /* Pods_RoomMatesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E44FE2BFD21DAD75A2AEB0 /* Pods_RoomMatesTests.framework */; };
+		70514708DBECAB7FF719E722 /* Pods_RoomMates_RoomMatesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26494CBDE57F3E25C239C12 /* Pods_RoomMates_RoomMatesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,12 +52,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		366B3C212423C004001ADB05 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				366B3C202423C004001ADB05 /* Pods_RoomMates.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1EA26B25316AF4364DE32790 /* Pods-RoomMates-RoomMatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMates-RoomMatesUITests.release.xcconfig"; path = "Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		28E44FE2BFD21DAD75A2AEB0 /* Pods_RoomMatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		360289152415549B008D855C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		362BF9F9241FE4F00023B118 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		363E2E19241FB2AA00F3BD08 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		363E2E1B241FBA9900F3BD08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		364D8A7024224C20004D959C /* FirebaseDataShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataShop.swift; sourceTree = "<group>"; };
+		366B3C1D2423BABA001ADB05 /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
 		367D7BA223DED57A00FE1B9A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		367D7BA423DEDBAF00FE1B9A /* StepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOne.swift; sourceTree = "<group>"; };
 		367D7BA623DF3F7700FE1B9A /* JoinToRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToRoom.swift; sourceTree = "<group>"; };
@@ -86,15 +106,14 @@
 		36F5D08924210E650059E4C9 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F5D08C24210E920059E4C9 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36FB5E212421080D00EE5B2F /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42089D9C5CE6CA1435FC915F /* Pods_RoomMatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F099234D899E3B996ADD4F9 /* Pods_RoomMates_RoomMatesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMates_RoomMatesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501210C011AAEB3E9925B773 /* Pods-RoomMates-RoomMatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMates-RoomMatesUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		66A444D01C6C77E9513562E4 /* Pods-RoomMates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMates.release.xcconfig"; path = "Target Support Files/Pods-RoomMates/Pods-RoomMates.release.xcconfig"; sourceTree = "<group>"; };
 		695D1A2F108072CF8A30D10D /* Pods_RoomMates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73568C93ACF31DB326E9AF2B /* Pods_RoomMates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749C7865CA880B850A05438B /* Pods-RoomMatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMatesTests.release.xcconfig"; path = "Target Support Files/Pods-RoomMatesTests/Pods-RoomMatesTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A194BFF07DD304F1761B8A0 /* Pods-RoomMates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMates.debug.xcconfig"; path = "Target Support Files/Pods-RoomMates/Pods-RoomMates.debug.xcconfig"; sourceTree = "<group>"; };
 		D5533E9949A904D695A124E4 /* Pods-RoomMatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMatesTests.debug.xcconfig"; path = "Target Support Files/Pods-RoomMatesTests/Pods-RoomMatesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD558D221E3553D41381762E /* Pods_RoomMates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26494CBDE57F3E25C239C12 /* Pods_RoomMates_RoomMatesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomMates_RoomMatesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35D5B2FB7D8C0B42124B1B6 /* Pods_RoomMates.framework in Frameworks */,
+				366B3C1F2423C004001ADB05 /* Pods_RoomMates.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68C2CDCB297F7B73C8F6173 /* Pods_RoomMatesTests.framework in Frameworks */,
+				649223B32F3B369252EA4B19 /* Pods_RoomMatesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44C016AFEE21F7DE2C5D557 /* Pods_RoomMates_RoomMatesUITests.framework in Frameworks */,
+				70514708DBECAB7FF719E722 /* Pods_RoomMates_RoomMatesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +197,8 @@
 				363E2E19241FB2AA00F3BD08 /* SessionStore.swift */,
 				36D9501224212E14004F20A3 /* ThreadDataType.swift */,
 				36D9501424212E49004F20A3 /* FirebaseData.swift */,
+				364D8A7024224C20004D959C /* FirebaseDataShop.swift */,
+				366B3C1D2423BABA001ADB05 /* SlideMenuView.swift */,
 			);
 			path = RoomMates;
 			sourceTree = "<group>";
@@ -212,9 +233,9 @@
 				36A1EB5D242103F000EF066C /* protobuf.framework */,
 				362BF9F9241FE4F00023B118 /* FirebaseAuth.framework */,
 				36868181241FE273003BA5E2 /* FirebaseAuth.framework */,
-				FD558D221E3553D41381762E /* Pods_RoomMates.framework */,
-				4F099234D899E3B996ADD4F9 /* Pods_RoomMates_RoomMatesUITests.framework */,
-				42089D9C5CE6CA1435FC915F /* Pods_RoomMatesTests.framework */,
+				73568C93ACF31DB326E9AF2B /* Pods_RoomMates.framework */,
+				E26494CBDE57F3E25C239C12 /* Pods_RoomMates_RoomMatesUITests.framework */,
+				28E44FE2BFD21DAD75A2AEB0 /* Pods_RoomMatesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -243,7 +264,8 @@
 				36ECBB8723DE2B300084785E /* Sources */,
 				36ECBB8823DE2B300084785E /* Frameworks */,
 				36ECBB8923DE2B300084785E /* Resources */,
-				D4A338ECB2E6AFC44F423539 /* [CP] Embed Pods Frameworks */,
+				C47892AF4A22B80A944DBAFC /* [CP] Embed Pods Frameworks */,
+				366B3C212423C004001ADB05 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,7 +303,7 @@
 				36ECBBA823DE2B330084785E /* Sources */,
 				36ECBBA923DE2B330084785E /* Frameworks */,
 				36ECBBAA23DE2B330084785E /* Resources */,
-				EAE99E099E33AC5175D7159D /* [CP] Embed Pods Frameworks */,
+				0BC2963963EF5646B3C4ECB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +387,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BC2963963EF5646B3C4ECB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1027155BFA71ADB7AAC3CB5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +448,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4A338ECB2E6AFC44F423539 /* [CP] Embed Pods Frameworks */ = {
+		C47892AF4A22B80A944DBAFC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,23 +487,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EAE99E099E33AC5175D7159D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoomMates-RoomMatesUITests/Pods-RoomMates-RoomMatesUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -486,6 +508,8 @@
 				367D7BA923DF41A500FE1B9A /* CreateRoom.swift in Sources */,
 				363E2E1A241FB2AA00F3BD08 /* SessionStore.swift in Sources */,
 				3690C12A23FEFAA600472D3D /* DashBoard.swift in Sources */,
+				364D8A7124224C20004D959C /* FirebaseDataShop.swift in Sources */,
+				366B3C1E2423BABA001ADB05 /* SlideMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

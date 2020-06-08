@@ -46,7 +46,7 @@ struct RegisterView: View {
             VStack{
                 ZStack {
                     Image("login")
-                    TextField("Login", text: $email)
+                    TextField("Email", text: $email)
                         .padding()
      
                 }.frame(width: 300)

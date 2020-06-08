@@ -19,14 +19,27 @@ struct DashBoard: View {
         NavigationView {
         VStack {
             Image("BackgroundImg")
-                .padding(.top, 129.0)
+                .padding(.top, 200.0)
                 .edgesIgnoringSafeArea(.all)
+            
+            Button(action: {
                 
+            }) {
+                Image(systemName: "line.horizontal.3")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 23, height: 20)
+                    .offset(x: -149, y: -300)
+                
+            }
+            Text("Hi Kacper !")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(Color.white)
+                .offset(x: -90, y: -260)
             Spacer()
             
-            Button(action: session.signOut) {
-                Text("sign out")
-            }
+            
             HStack {
                 ZStack {
                     Image("money")
@@ -45,12 +58,12 @@ struct DashBoard: View {
                     Image("day")
                     
                     Text(showDayOfWeek())
-                        .font(.system(size: 19))
+                        .font(.system(size: 17))
                         .fontWeight(.bold)
                         .shadow(color: .gray, radius: 0, x: 0, y: 2)
                         .foregroundColor(Color(red: 77/255, green: 47/255, blue: 148/255))
                 }
-            }.offset(x: 0, y: -150)
+            }.offset(x: 0, y: -220)
             Spacer()
             
             Group {
@@ -80,7 +93,7 @@ struct DashBoard: View {
                             .renderingMode(.original)
                     }
                 }
-            }.offset(x: 0, y: -130)
+            }.offset(x: 0, y: -200)
             
             Image("BackDown")
                 .edgesIgnoringSafeArea(.all)

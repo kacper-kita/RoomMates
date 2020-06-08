@@ -17,10 +17,12 @@ struct ShopList: View {
         // To remove all separators including the actual ones:
         UITableView.appearance().separatorStyle = .none
     }
-    
+    @ObservedObject private var datas = firebaseDataShop
     @State private var showingAlert = false
-    @State private var step = 0
+    @State private var updateRowID = ""
     @State private var item = ""
+    @State private var updateRowValue = ""
+    @State private var isUpdate = false
     @State private var listItems: [String] = []
     @State private var image = "rowShop"
     @Environment(\.presentationMode) var presentationMode
@@ -60,16 +62,7 @@ struct ShopList: View {
                     .font(Font.system(size: 30, design: .default))
                     
                     Button(action: {
-                        if self.item == "" {
-                            self.showingAlert = true
-                        }else{
-                            self.addRow()
-                        }
-                        
-                        if !self.item.isEmpty {
-                            self.item = ""
-                        }
-                        
+                  self.doItButtonShop()
                     }) {
                         Image("addShopBtn")
                             .renderingMode(.original)
@@ -91,20 +84,17 @@ struct ShopList: View {
             }.offset(x: 0, y: -180)
             
             List{
-                ForEach(listItems, id: \.self) { items in
-                    Button(action: {
-                        if self.image == "complete" {
-                            self.image = "list"
-                            
-                        }else {
-                            self.image = "complete"
-                        }
-                    }) {
+                ForEach(datas.data) { data in
+                Button(action: {
+                    self.isUpdate = true
+                    self.updateRowID = data.id
+                    self.updateRowValue = data.msg
+                }) {
                         ZStack {
                             Image("rowShop")
                             .renderingMode(.original)
                             
-                            Text(items)
+                            Text(data.msg)
                         }.frame(height: 65)
                     }.offset(x: -21)
                 }.onDelete { (indexSet) in
@@ -132,6 +122,16 @@ struct ShopList: View {
     }
     func addRow() {
         self.listItems.append(item)
+    }
+    
+    func doItButtonShop() {
+        if self.item == "" {
+            self.showingAlert = true
+        }else{
+            self.isUpdate ? firebaseDataShop.updateDataShop(id: self.updateRowID, txt: self.item) : firebaseDataShop.createDataShop(msg1: self.item)
+            self.isUpdate = false
+            self.item = ""
+        }
     }
     //MARK: Do dokończenia
     /*
